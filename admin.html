@@ -1,7 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <title>Admin Panel</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        #container {
+            margin-bottom: 20px;
+        }
+        #generatedCode {
+            margin-top: 10px;
+            width: 300px;
+            display: none;
+        }
+        #notification {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        #notification.success {
+            background-color: #c9f7c5;
+            color: #1f5c1a;
+        }
+        #notification.error {
+            background-color: #f8d7da;
+            color: #842029;
+        }
+        #notification.hidden {
+            display: none;
+        }
+        #log {
+            border: 1px solid #ccc;
+            padding: 10px;
+            max-height: 200px;
+            overflow-y: auto;
+            background: #f9f9f9;
+        }
+        #log strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+        #logList {
+            list-style-type: none;
+            padding-left: 10px;
+            margin: 0;
+        }
+        #logList li {
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+    </style>
 </head>
 <body>
     <div id="container">
@@ -9,16 +61,19 @@
         <input type="text" id="linkInput" placeholder="Enter the link..." />
         <button onclick="generateCode()">Generate Code</button>
         <div id="result"></div>
-        <input type="text" id="generatedCode" readonly style="margin-top: 10px; width: 300px; display: none;" />
+        <input type="text" id="generatedCode" readonly />
     </div>
 
     <!-- Activity Log Section -->
-    <div id="log" style="margin-top:20px; border:1px solid #ccc; padding:10px; max-height:200px; overflow:auto;">
+    <div id="log">
         <strong>Activity Log</strong>
         <ul id="logList"></ul>
     </div>
 
+    <!-- Notification Section -->
     <div id="notification" class="hidden"></div>
+
+    <!-- Script -->
     <script src="admin.js"></script>
 </body>
 </html>
