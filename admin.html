@@ -1,17 +1,24 @@
 <!DOCTYPE html>
- <html>
- <head>
-     <link rel="stylesheet" type="text/css" href="styles.css">
- </head>
- <body>
-     <div id="container">
-         <h2>Generate New Code</h2>
-         <input type="text" id="linkInput" placeholder="Enter the link..." />
-         <button onclick="generateCode()">Generate Code</button>
-         <div id="result"></div>
-         <input type="text" id="generatedCode" readonly style="margin-top: 10px; width: 300px; display: none;" />
-     </div>
-     <div id="notification" class="hidden"></div>
-     <script src="admin.js"></script>
- </body>
- </html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div id="container">
+        <h2>Generate New Code</h2>
+        <input type="text" id="linkInput" placeholder="Enter the link..." />
+        <button onclick="generateCode()">Generate Code</button>
+        <div id="result"></div>
+        <input type="text" id="generatedCode" readonly style="margin-top: 10px; width: 300px; display: none;" />
+    </div>
+
+    <!-- Activity Log Section -->
+    <div id="log" style="margin-top:20px; border:1px solid #ccc; padding:10px; max-height:200px; overflow:auto;">
+        <strong>Activity Log</strong>
+        <ul id="logList"></ul>
+    </div>
+
+    <div id="notification" class="hidden"></div>
+    <script src="admin.js"></script>
+</body>
+</html>
